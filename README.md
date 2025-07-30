@@ -1,16 +1,16 @@
-# 🎯 Terminal Portfolio
+# Terminal Portfolio
 
 An interactive SSH-based terminal portfolio built with Go, featuring a beautiful TUI (Terminal User Interface) powered by Charm's Bubbletea and styled with Lipgloss.
 
-## ✨ Features
+## Features
 
-- 🌐 **SSH Server Integration** - Access portfolio via SSH from anywhere
-- 🎨 **Beautiful TUI** - Styled with Lipgloss for modern terminal aesthetics  
-- 🧭 **Horizontal Navigation** - Intuitive left/right arrow key navigation
-- 🔥 **Orange Theme** - Eye-catching orange accents for selected items
-- 📱 **Responsive Design** - Adapts to different terminal sizes
-- ⚡ **Real-time Updates** - Smooth navigation with instant content switching
-- 🚀 **Multiple Sections** - Home, About, Projects, and Contact pages
+- **SSH Server Integration** - Access portfolio via SSH from anywhere
+- **Beautiful TUI** - Styled with Lipgloss for modern terminal aesthetics  
+- **Horizontal Navigation** - Intuitive left/right arrow key navigation
+- **Orange Theme** - Eye-catching orange accents for selected items
+- **Responsive Design** - Adapts to different terminal sizes
+- **Real-time Updates** - Smooth navigation with instant content switching
+- **Multiple Sections** - Home, About, Projects, and Contact pages
 
 ## 🛠️ Tech Stack
 
@@ -55,34 +55,27 @@ ssh-keygen -R "[localhost]:23234"
 # Or remove all localhost entries
 ssh-keygen -R "localhost"
 
-# If you want to clear all known hosts (use with caution!)
-# rm ~/.ssh/known_hosts
 ```
 
 ### 5. Build and Run
 
 #### Option 1: Run Directly (Development)
 ```bash
-# Compile and run immediately
 go run main.go
 ```
 
 #### Option 2: Build Binary (Production)
 ```bash
-# Build the binary
 go build -o portfolio main.go
 
-# Run the binary
 ./portfolio
 ```
 
 
 #### Option 4: Install Globally
 ```bash
-# Install to $GOPATH/bin (requires $GOPATH/bin in PATH)
 go install .
 
-# Run from anywhere
 terminal-portfolio
 ```
 
@@ -157,26 +150,6 @@ terminal-portfolio/
 #### Banner
 - **ASCII Art**: Edit `banner/banner.go` - Replace with your custom ASCII art
 
-### Change Colors
-```go
-// In menu/styles/styles.go, modify color values:
-// For page content
-SectionTitleStyle: lipgloss.NewStyle().
-    Foreground(lipgloss.Color("#FF6B35"))  // Orange headings
-
-// For menu UI
-SelectedNavStyle: lipgloss.NewStyle().
-    Background(lipgloss.Color("#FF6B35"))  // Orange selection
-```
-
-### Change Port
-```go
-// In main.go
-const (
-    host = "localhost"
-    port = "23234"  // Change this
-)
-```
 
 ## 🐛 Troubleshooting
 
@@ -204,36 +177,6 @@ go mod download
 go mod tidy
 ```
 
-## 🎨 Screenshots
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ Rudra | Portfolio                    Home  About  Projects  Contact           │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                               │
-│ # About Me                                                                    │
-│                                                                               │
-│ 21 | Software Engineer. Explore the                                          │
-│ open-source projects and libraries I maintain on GitHub                      │
-│                                                                               │
-│ # Tools & Technologies                                                        │
-│                                                                               │
-│ ## Languages                                                                  │
-│ ╭─────────╮ ╭────────╮ ╭─────────────╮ ╭────────────╮ ╭────╮               │
-│ │ Python  │ │   C    │ │ JavaScript  │ │ TypeScript │ │ Go │               │
-│ ╰─────────╯ ╰────────╯ ╰─────────────╯ ╰────────────╯ ╰────╯               │
-│                                                                               │
-│                         Press 'q' to quit | Use arrow keys to navigate       │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## 📝 License
 
