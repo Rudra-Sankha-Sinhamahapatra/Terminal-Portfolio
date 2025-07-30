@@ -60,13 +60,30 @@ ssh-keygen -R "localhost"
 ```
 
 ### 5. Build and Run
-```bash
-# Run directly
-go run main.go
 
-# Or build first
+#### Option 1: Run Directly (Development)
+```bash
+# Compile and run immediately
+go run main.go
+```
+
+#### Option 2: Build Binary (Production)
+```bash
+# Build the binary
 go build -o portfolio main.go
+
+# Run the binary
 ./portfolio
+```
+
+
+#### Option 4: Install Globally
+```bash
+# Install to $GOPATH/bin (requires $GOPATH/bin in PATH)
+go install .
+
+# Run from anywhere
+terminal-portfolio
 ```
 
 ## 🎮 Usage
@@ -101,8 +118,20 @@ ssh <your-ip> -p 23234
 ```
 terminal-portfolio/
 ├── main.go              # SSH server and application entry point
+├── banner/
+│   └── banner.go        # ASCII art banner
 ├── menu/
-│   └── menu.go          # TUI logic, styling, and content
+│   ├── menu.go          # Main TUI logic and navigation
+│   ├── pages/           # Individual page implementations
+│   │   ├── page.go      # Page interface definition
+│   │   ├── home.go      # Home page content 
+│   │   ├── about.go     # About page with skills
+│   │   ├── projects.go  # Projects showcase
+│   │   └── contact.go   # Contact information
+│   ├── styles/          # Centralized styling
+│   │   └── styles.go    # All styling definitions
+│   └── utils/           # Utility functions
+│       └── layout.go    # Layout helper functions
 ├── .ssh/
 │   ├── id_ed25519       # SSH host private key  
 │   └── id_ed25519.pub   # SSH host public key
@@ -115,20 +144,29 @@ terminal-portfolio/
 ## 🔧 Customization
 
 ### Update Personal Information
-Edit `menu/menu.go` and modify:
-- **Title**: Change `"Rudra | Portfolio"` in the `titleStyle.Render()` 
-- **About Section**: Update the about text and skills
-- **Projects**: Add/modify your projects in the Projects section
-- **Contact**: Update email, GitHub, LinkedIn, Twitter links
+
+#### Title and Navigation
+- Edit `menu/menu.go` line 167: Change `"Rudra | Portfolio"`
+
+#### Page Content
+- **Home Page**: Edit `menu/pages/home.go` - Update banner subtitle
+- **About Section**: Edit `menu/pages/about.go` - Update bio and skills arrays
+- **Projects**: Edit `menu/pages/projects.go` - Modify the `getProjects()` method
+- **Contact**: Edit `menu/pages/contact.go` - Update the `getContactInfo()` method
+
+#### Banner
+- **ASCII Art**: Edit `banner/banner.go` - Replace with your custom ASCII art
 
 ### Change Colors
 ```go
-// In menu.go, modify these color values:
-selectedNavStyle = lipgloss.NewStyle().
-    Background(lipgloss.Color("#FF6B35"))  // Orange background
-    
-sectionTitleStyle = lipgloss.NewStyle().
-    Foreground(lipgloss.Color("#FF6B35"))  // Orange text
+// In menu/styles/styles.go, modify color values:
+// For page content
+SectionTitleStyle: lipgloss.NewStyle().
+    Foreground(lipgloss.Color("#FF6B35"))  // Orange headings
+
+// For menu UI
+SelectedNavStyle: lipgloss.NewStyle().
+    Background(lipgloss.Color("#FF6B35"))  // Orange selection
 ```
 
 ### Change Port
