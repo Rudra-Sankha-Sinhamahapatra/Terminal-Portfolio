@@ -9,7 +9,7 @@ import (
 	"syscall"
 	"time"
 
-	"menu/menu"
+	"terminal-portfolio/menu"
 
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/log"
