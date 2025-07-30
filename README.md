@@ -12,20 +12,20 @@ An interactive SSH-based terminal portfolio built with Go, featuring a beautiful
 - **Real-time Updates** - Smooth navigation with instant content switching
 - **Multiple Sections** - Home, About, Projects, and Contact pages
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **[Go](https://golang.org/)** - Backend language
 - **[Wish](https://github.com/charmbracelet/wish)** - SSH server framework
 - **[Bubbletea](https://github.com/charmbracelet/bubbletea)** - TUI framework
 - **[Lipgloss](https://github.com/charmbracelet/lipgloss)** - Terminal styling
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Go 1.24+ installed
 - Terminal with SSH support
 - Basic understanding of Go modules
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 ### 1. Clone the Repository
 ```bash
@@ -151,7 +151,7 @@ terminal-portfolio/
 - **ASCII Art**: Edit `banner/banner.go` - Replace with your custom ASCII art
 
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### "Host key verification failed"
 ```bash
@@ -178,11 +178,11 @@ go mod tidy
 ```
 
 
-## 📝 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 🌟 Acknowledgments
+## Acknowledgments
 
 - [Charm](https://charm.sh/) for the amazing TUI libraries
 - [Bubbletea](https://github.com/charmbracelet/bubbletea) community
